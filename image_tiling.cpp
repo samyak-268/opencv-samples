@@ -20,7 +20,7 @@ int main()
      * Mat image = imread("/home/samyak/Projects/Computer-Vision/Emotion-Classification/Images/face-1.jpg", 
             CV_LOAD_IMAGE_GRAYSCALE);
     */
-    Mat image = imread("/home/samyak/Pictures/Aarti.jpg", 
+    Mat image = imread("/home/samyak/Pictures/Samyak.jpg", 
             CV_LOAD_IMAGE_GRAYSCALE);
     if(image.empty())
     {
@@ -49,10 +49,10 @@ int main()
     imshow("Block3", block_3);
     imshow("Block4", block_4);
 
-    imwrite("/home/samyak/Pictures/Aarti-1.jpg", block_1);
-    imwrite("/home/samyak/Pictures/Aarti-2.jpg", block_2);
-    imwrite("/home/samyak/Pictures/Aarti-3.jpg", block_3);
-    imwrite("/home/samyak/Pictures/Aarti-4.jpg", block_4);
+    imwrite("/home/samyak/Pictures/Samyak-1.jpg", block_1);
+    imwrite("/home/samyak/Pictures/Samyak-2.jpg", block_2);
+    imwrite("/home/samyak/Pictures/Samyak-3.jpg", block_3);
+    imwrite("/home/samyak/Pictures/Samyak-4.jpg", block_4);
     
     waitKey(0);
     return 0;
