@@ -14,14 +14,18 @@
 using namespace std;
 using namespace cv;
 
-int main()
+void help();
+
+int main(int argc, char** argv)
 {
-    /*
-     * Mat image = imread("/home/samyak/Projects/Computer-Vision/Emotion-Classification/Images/face-1.jpg", 
-            CV_LOAD_IMAGE_GRAYSCALE);
-    */
-    Mat image = imread("/home/samyak/Pictures/Samyak.jpg", 
-            CV_LOAD_IMAGE_GRAYSCALE);
+    if(argc < 2)
+    {
+        help();
+        return -1;
+    }
+    
+    string input_image_path = argv[1];
+    Mat image = imread(input_image_path, CV_LOAD_IMAGE_GRAYSCALE);
     if(image.empty())
     {
         cout << "Invalid image\n";
@@ -56,4 +60,13 @@ int main()
     
     waitKey(0);
     return 0;
+}
+
+void help()
+{
+    cout << "\nThis program splits up the given input image into 4 blocks using"
+        " the Rect() function to extract ROI\n";
+
+    cout << "\nUSAGE: ./image_tiling [IMAGE]\n"
+        "IMAGE\n\tPath to image taken as input.\n";
 }
